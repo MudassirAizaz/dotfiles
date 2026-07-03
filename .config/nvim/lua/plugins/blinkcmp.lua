@@ -1,0 +1,41 @@
+return{
+    "saghen/blink.cmp",
+    event = {
+        "InsertEnter",
+        "CmdwinEnter",
+    },
+    dependencies = {
+        "rafamadriz/friendly-snippets",
+    },
+    version = "1.*",
+    opts = {
+        keymap = {
+            preset = "super-tab",
+        },
+        appearance = {
+            nerd_font_variant = "mono",
+        },
+        sources = {
+            default = {
+                "lsp",
+                "path",
+                "snippets",
+                "buffer",
+                "lazydev",
+            },
+            providers = {
+                lazydev = {
+                    name = "LazyDev",
+                    module = "lazydev.integrations.blink",
+                    score_offset = 100,
+                },
+            },
+        },
+        fuzzy = {
+            implementation = "prefer_rust_with_warning",
+        },
+    },
+    opts_extend = {
+        "sources.default",
+    },
+}
