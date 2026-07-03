@@ -1,0 +1,27 @@
+# Font Configuration
+font-size = 11
+font-family = "Iosevka Term"
+
+# Window Configuration
+window-decoration = auto
+
+# Cursor Configuration
+cursor-style = bar
+cursor-style-blink = true
+
+# Terminal features
+mouse-hide-while-typing = true
+copy-on-select = false
+confirm-close-surface = false
+
+# Disable annoying copied to clipboard
+app-notifications = no-clipboard-copy,no-config-reload
+
+# Key bindings for common actions
+keybind = ctrl+shift+n=new_window
+keybind = ctrl+plus=increase_font_size:1
+keybind = ctrl+minus=decrease_font_size:1
+keybind = ctrl+zero=reset_font_size
+
+command = /usr/bin/fish
+theme = Onenord
