@@ -1,0 +1,12 @@
+set recolor true
+set default-fg "#f9f5d7"
+set default-bg "#3c3836"
+set recolor-lightcolor "#fdf6e3" # Background
+set recolor-darkcolor  "#586e75" # Text/Foreground
+set statusbar-bg "#fdf6e3"
+set statusbar-fg "#586e75"
+set selection-clipboard clipboard
+map <C-t> file_chooser
+set selection-notification false
+set window-height 1200
+set window-width 1920
