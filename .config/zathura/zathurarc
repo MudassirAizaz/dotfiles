@@ -1,12 +1,14 @@
-set recolor true
+# set recolor true
 set default-fg "#f9f5d7"
-set default-bg "#3c3836"
-set recolor-lightcolor "#fdf6e3" # Background
-set recolor-darkcolor  "#586e75" # Text/Foreground
-set statusbar-bg "#fdf6e3"
-set statusbar-fg "#586e75"
+set default-bg "#000000"
+set recolor-lightcolor "#000000" # Background
+set recolor-darkcolor  "#cccccc" # Text/Foreground
+# set statusbar-bg "#fdf6e3"
+# set statusbar-fg "#586e75"
 set selection-clipboard clipboard
-map <C-t> file_chooser
 set selection-notification false
-set window-height 1200
-set window-width 1920
+set window-height 3000
+set window-width 3000
+map <Right> navigate next
+map <Left> navigate previous
+map <C-t> file_chooser
