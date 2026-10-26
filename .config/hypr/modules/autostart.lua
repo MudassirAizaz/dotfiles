@@ -1,0 +1,11 @@
+local programs = require("modules.programs")
+
+hl.on("hyprland.start", function ()
+--   hl.exec_cmd(programs.terminal)
+--   hl.exec_cmd("nm-applet")
+    hl.exec_cmd(programs.catCommand)
+    hl.exec_cmd("hyprpaper")
+    hl.exec_cmd("hyprctl setcursor breeze_cursors 24")
+    hl.exec_cmd("systemctl --user start hyprpolkitagent")
+    hl.exec_cmd("wl-paste --watch cliphist store")
+end)

@@ -1,29 +1,38 @@
----------------------
----- KEYBINDINGS ----
----------------------
+local programs = require("modules.programs")
 
 local mainMod = "SUPER" -- Sets "Windows" key as main modifier
 
+-- Startup and shortcuts use the same installed Cat directory.
+local catIpc = programs.catCommand .. " ipc call shell "
+hl.bind(mainMod .. " + R", hl.dsp.exec_cmd(catIpc .. "launcher"))
+hl.bind(mainMod .. " + SPACE", hl.dsp.exec_cmd(catIpc .. "menu"))
+hl.bind(mainMod .. " + P", hl.dsp.exec_cmd(catIpc .. "session"))
+hl.bind(mainMod .. " + V", hl.dsp.exec_cmd(catIpc .. "clipboard"))
+hl.bind(mainMod .. " + N", hl.dsp.exec_cmd(catIpc .. "notifications"))
+hl.bind(mainMod .. " + SHIFT + N", hl.dsp.exec_cmd(catIpc .. "dnd"))
+
 -- Example binds, see https://wiki.hypr.land/Configuring/Basics/Binds/ for more
-hl.bind(mainMod .. " + return", hl.dsp.exec_cmd(terminal))
+hl.bind(mainMod .. " + return", hl.dsp.exec_cmd(programs.terminal))
 local closeWindowBind = hl.bind(mainMod .. " + W", hl.dsp.window.close())
 -- closeWindowBind:set_enabled(false)
-hl.bind(mainMod .. " + M", hl.dsp.exec_cmd("command -v hyprshutdown >/dev/null 2>&1 && hyprshutdown || hyprctl dispatch 'hl.dsp.exit()'"))
-hl.bind(mainMod .. " + E", hl.dsp.exec_cmd(fileManager))
+hl.bind(mainMod .. " + M", hl.dsp.exec_cmd(programs.logoutCommand))
+hl.bind(mainMod .. " + E", hl.dsp.exec_cmd(programs.fileManager))
 hl.bind(mainMod .. " + B", hl.dsp.window.float({ action = "toggle" }))
-hl.bind(mainMod .. " + R", hl.dsp.exec_cmd(menu))
+-- Replaced by Cat launcher above:
 -- hl.bind(mainMod .. " + P", hl.dsp.window.pseudo())
 hl.bind(mainMod .. " + J", hl.dsp.layout("togglesplit"))    -- dwindle only
 hl.bind(mainMod .. " + F", hl.dsp.window.fullscreen({ mode = "maximized" }))
-hl.bind(mainMod .. " + V", hl.dsp.exec_cmd("cliphist list | fuzzel --dmenu --with-nth 2 | cliphist decode | wl-copy"))
+-- Replaced by Cat clipboard above:
+-- hl.bind(mainMod .. " + V", hl.dsp.exec_cmd("cliphist list | fuzzel --dmenu --with-nth 2 | cliphist decode | wl-copy"))
 hl.bind(mainMod .. " + L", hl.dsp.exec_cmd("hyprlock"))
-hl.bind(mainMod .. " + Q", hl.dsp.exec_cmd("grim -g \"$(slurp)\" - | wl-copy"))
-hl.bind(mainMod .. " + P", hl.dsp.exec_cmd("../scripts/power.sh"))
+hl.bind("Print", hl.dsp.exec_cmd("grim -g \"$(slurp)\" - | wl-copy"))
+-- Replaced by the Cat power menu above:
 -- Move focus with mainMod + arrow keys
 hl.bind(mainMod .. " + left",  hl.dsp.focus({ direction = "left" }))
 hl.bind(mainMod .. " + right", hl.dsp.focus({ direction = "right" }))
 hl.bind(mainMod .. " + up",    hl.dsp.focus({ direction = "up" }))
 hl.bind(mainMod .. " + down",  hl.dsp.focus({ direction = "down" }))
+hl.bind(mainMod .. " + D", hl.dsp.exec_cmd("worddef"))
 
 -- Switch workspaces with mainMod + [0-9]
 -- Move active window to a workspace with mainMod + SHIFT + [0-9]
@@ -58,4 +67,3 @@ hl.bind("XF86AudioNext",  hl.dsp.exec_cmd("playerctl next"),       { locked = tr
 hl.bind("XF86AudioPause", hl.dsp.exec_cmd("playerctl play-pause"), { locked = true })
 hl.bind("XF86AudioPlay",  hl.dsp.exec_cmd("playerctl play-pause"), { locked = true })
 hl.bind("XF86AudioPrev",  hl.dsp.exec_cmd("playerctl previous"),   { locked = true })
-

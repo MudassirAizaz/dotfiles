@@ -26,3 +26,16 @@ vim.g.maplocalleader = "\\"
 vim.opt.foldmethod = "expr"
 vim.opt.foldexpr = "v:lua.vim.treesitter.foldexpr()"
 vim.opt.foldlevel = 99
+
+vim.api.nvim_create_autocmd("ColorScheme", {
+  callback = function()
+    vim.api.nvim_set_hl(0, "Comment", { italic = true })
+  end,
+})
+
+vim.cmd("packadd nvim.undotree")
+vim.keymap.set("n", "<leader>t", require("undotree").open)
+
+vim.opt.undofile = true
+
+

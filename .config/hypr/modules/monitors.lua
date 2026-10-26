@@ -1,11 +1,10 @@
-------------------
----- MONITORS ----
-------------------
-
--- See https://wiki.hypr.land/Configuring/Basics/Monitors/
+-- A host may provide monitor settings separately; the checkout does not require them.
+-- if package.searchpath("modules.monitors", package.path) then
+--     require("modules.monitors")
+-- end
 hl.monitor({
-    output   = "",
-    mode     = "1920x1200@60.00Hz",
+    output   = "eDP-1",
+    mode     = "preferred",
     position = "auto",
     scale    = "1",
 })

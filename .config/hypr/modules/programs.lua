@@ -1,9 +1,14 @@
----------------------
----- MY PROGRAMS ----
----------------------
+-- Programs and the installed Cat launcher used by startup and shortcuts.
+local terminal = "ghostty"
+local catDirectory = os.getenv("HOME") .. "/.local/bin/cat-shell"
 
--- Set programs that you use
-local terminal    = "ghostty"
-local fileManager = terminal .. " -e yazi"
-local menu        = "fuzzel"
+local function shellQuote(value)
+    return "'" .. value:gsub("'", "'\\''") .. "'"
+end
 
+return {
+    terminal = terminal,
+    fileManager = terminal .. " -e yazi",
+    catCommand = shellQuote(catDirectory .. "/run.sh"),
+    logoutCommand = "bash " .. shellQuote(catDirectory .. "/scripts/session.sh") .. " logout",
+}
