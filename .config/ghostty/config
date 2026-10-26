@@ -1,7 +1,7 @@
 # Font Configuration
 font-size = 11
-font-family = "Iosevka Term"
-
+font-family = "JetBrainsMono"
+adjust-cell-width = -15%
 # Window Configuration
 window-decoration = auto
 
@@ -24,4 +24,4 @@ keybind = ctrl+minus=decrease_font_size:1
 keybind = ctrl+zero=reset_font_size
 
 command = /usr/bin/fish
-theme = Onenord
+theme = TokyoNight Storm

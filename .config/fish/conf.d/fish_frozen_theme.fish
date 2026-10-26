@@ -5,41 +5,41 @@
 #     man fish-interactive | less +/^SYNTAX.HIGHLIGHTING
 # for appropriate commands to add to ~/.config/fish/config.fish instead.
 
-set --global fish_color_autosuggestion 4c566a
-set --global fish_color_cancel --reverse
-set --global fish_color_command 88c0d0
-set --global fish_color_comment 4c566a --italics
-set --global fish_color_cwd 5e81ac
-set --global fish_color_cwd_root bf616a
-set --global fish_color_end 81a1c1
-set --global fish_color_error bf616a
-set --global fish_color_escape ebcb8b
-set --global fish_color_gray 
-set --global fish_color_history_current e5e9f0 --bold
-set --global fish_color_host a3be8c
-set --global fish_color_host_remote ebcb8b
-set --global fish_color_keyword 81a1c1
-set --global fish_color_normal --reset
-set --global fish_color_operator 81a1c1
-set --global fish_color_option 8fbcbb
-set --global fish_color_param d8dee9
-set --global fish_color_quote a3be8c
-set --global fish_color_redirection b48ead --bold
-set --global fish_color_search_match --bold --background=434c5e
-set --global fish_color_selection d8dee9 --bold --background=434c5e
-set --global fish_color_status bf616a
-set --global fish_color_user a3be8c
+set --global fish_color_autosuggestion 9f9f9f
+set --global fish_color_cancel 000000 --background=ffffff
+set --global fish_color_command 5c5cff
+set --global fish_color_comment cd5c5c
+set --global fish_color_cwd 00ff00
+set --global fish_color_cwd_root 00cd00
+set --global fish_color_end 00ff00
+set --global fish_color_error ff0000
+set --global fish_color_escape 00ffff
+set --global fish_color_gray 9ca0b0
+set --global fish_color_history_current --bold
+set --global fish_color_host ffffff
+set --global fish_color_host_remote cdcd00
+set --global fish_color_keyword 8839ef
+set --global fish_color_normal ffffff
+set --global fish_color_operator 00ffff
+set --global fish_color_option 40a02b
+set --global fish_color_param 00cdcd
+set --global fish_color_quote cdcd00
+set --global fish_color_redirection 00cdcd --bold
+set --global fish_color_search_match ffffff --bold --background=7f7f7f
+set --global fish_color_selection ffffff --bold --background=7f7f7f
+set --global fish_color_status 00cd00
+set --global fish_color_user 00ff00
 set --global fish_color_valid_path --underline=single
 set --global fish_pager_color_background 
-set --global fish_pager_color_completion e5e9f0
-set --global fish_pager_color_description ebcb8b --italics
-set --global fish_pager_color_prefix --bold --underline=single
-set --global fish_pager_color_progress 3b4252 --bold --background=d08770
+set --global fish_pager_color_completion 4c4f69
+set --global fish_pager_color_description cdcd00 --italics
+set --global fish_pager_color_prefix ffffff --bold --underline=single
+set --global fish_pager_color_progress ffffff --bold --background=00cdcd
 set --global fish_pager_color_secondary_background 
 set --global fish_pager_color_secondary_completion 
 set --global fish_pager_color_secondary_description 
 set --global fish_pager_color_secondary_prefix 
-set --global fish_pager_color_selected_background --background=434c5e
-set --global fish_pager_color_selected_completion 
-set --global fish_pager_color_selected_description 
-set --global fish_pager_color_selected_prefix 
+set --global fish_pager_color_selected_background --background=7f7f7f
+set --global fish_pager_color_selected_completion ffffff --bold
+set --global fish_pager_color_selected_description ffffff --bold --italics
+set --global fish_pager_color_selected_prefix ffffff --bold
